@@ -79,7 +79,7 @@ export default function Artikel({navigation}){
             <View style={{flex:1, flexDirection:'column'}}>
             {/* <Text style={styles.textStyle}>{item.id}</Text> */}
             <Text style={styles.textStyle}>{item.title}</Text>
-            <Text style={styles.textStyle}>{item.content.substring(0, 159)}.....</Text>
+            <Text style={styles.textStyle}>{item.content.substring(0, 100)}.....</Text>
             </View>
         </View>
        </TouchableOpacity>
