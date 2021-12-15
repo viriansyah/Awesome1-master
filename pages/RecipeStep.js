@@ -8,13 +8,13 @@ export default function RecipeStep({navigation}){
     {
       title: 'Langkah - Langkah',
       data: [
-        'Langkah 1',
-        'Langkah 2',
-        'Langkah 3',
-        'Langkah 4',
-        'Langkah 5',
-        'Langkah 6',
-        'Langkah 7',
+        '1. Panaskan minyak, masukkan bawang merah, goreng di api sedang kecil',
+        '2. Pisahkan sebagian bawang goreng, masukkan bawang putih dan lada putih, aduk',
+        '3. Tambahkan batang daun bawang, besarkan api, lalu masukkan ayam, tumis hingga sedikit kecokelatan',
+        '4. Masukkan air, masak hingga mendidih, lalu kecilkan api',
+        '5. Masukkan kentang dan wortel, aduk, lalu tambahkan pala dan kapulaga',
+        '6. Tambahkan masako kaldu ayam, aduk, kemudian masukkan tomat, daun bawang, seledri dan kol, masak selama kurang lebih 5 menit ',
+        '7. Sup ayam siap disajikan dengan bawang goreng dan jeruk limau sebagai pelengkap',
       ],
     },
   ];
@@ -29,7 +29,7 @@ export default function RecipeStep({navigation}){
         unfillColor="#FFFFFF"
         text={title}
         iconStyle={{ borderColor: "green" }}
-        textStyle={{ fontFamily: "JosefinSans-Regular", fontSize:28, color:'black'}}
+        textStyle={{ fontFamily: "JosefinSans-Regular", fontSize:20, color:'black', marginRight:20}}
       />
     </View>
   );
@@ -61,8 +61,10 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   item: {
+    marginLeft:15,
     paddingHorizontal: 20,
     flexDirection: 'row',
     paddingVertical: 5,
+    marginRight:15
   },
 });

@@ -8,16 +8,15 @@ export default function news({ route }) {
   return (
   <SafeAreaView >
     <ScrollView>
-    <View style={styles.thumbContainer}>
-        <ImageBackground source={img_url ? { uri: img_url } : null} style={styles.thumbnail}></ImageBackground>
-     </View> 
       <View>
         <Text style={styles.textStyle}>
-        {title}
+          {title}
         </Text>
-        <Text style={styles.textStyle}>
-        -
+        <Text style={styles.textStyle2}>
         </Text>
+        <View style={styles.thumbContainer}>
+          <ImageBackground source={img_url ? { uri: img_url } : null} style={styles.thumbnail}></ImageBackground>
+        </View> 
         <Text style={styles.textStyle}>
         {content} 
         </Text>
@@ -36,6 +35,7 @@ const styles = StyleSheet.create({
   textStyle: {
     marginLeft:15,
     marginRight:15,
+    marginTop:15,
     fontSize: 20,
     textAlign: 'justify',
   },
@@ -60,6 +60,14 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 300,
   },
+
+  textStyle2: {
+    height: 0.1,
+    width: '100%',
+    backgroundColor: 'black',
+    marginTop:5,
+  },
+
   thumbnail: {
     flex: 1,
     width: undefined,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { View, Text, StyleSheet, SectionList,Button } from 'react-native';
+import { View, Text, StyleSheet, SectionList,Button, SafeAreaView } from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import YoutubePlayer from 'react-native-youtube-iframe';
 
@@ -10,16 +10,23 @@ export default function RecipeDetail({navigation,route}){
     {
       title: 'Bahan - Bahan',
       data: [
-        'Bahan 1',
-        'Bahan 2',
-        'Bahan 3',
-        'Bahan 4',
-        'Bahan 5',
-        'Bahan 6',
-        'Bahan 7',
-        'Bahan 8',
-        'Bahan 9',
-        'Bahan 10',
+        '- 900 gr paha bawah ayam, potong',
+        '- 10 siung bawang merah, iris',
+        '- 3 siung bawang putih, geprek',
+        '- 300 gr wortel, potong',
+        '- 300 gr kentang, potong',
+        '- 200 gr kol, potong',
+        '- 2 batang daun bawang, potong',
+        '- 6 batang seledri, potong',
+        '- 2 buah tomat merah, potong',
+        '- 1 buah pala',
+        '- 4 buah kapulaga',
+        '- ½ sdt lada putih',
+        '- 2-3 sdm Masako Kaldu Spesial Rasa Ayam',
+        '- 2-3 liter air',
+        '- 2-3 sdm minyak',
+        '- Bawang goreng',
+        '- Jeruk limau',
       ],
     },
   ];
@@ -34,21 +41,13 @@ export default function RecipeDetail({navigation,route}){
         unfillColor="#FFFFFF"
         text={title}
         iconStyle={{ borderColor: "green" }}
-        textStyle={{ fontFamily: "JosefinSans-Regular", fontSize:27, color:'black'}}
+        textStyle={{ fontFamily: "JosefinSans-Regular", fontSize:20, color:'black'}}
       />
     </View>
   );
 
   return (
     <View style={styles.container}>
-      <SectionList
-        sections={INGREDIENTS}
-        keyExtractor={(item, index) => item + index}
-        renderItem={({ item }) => <Item title={item} />}
-        renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.title}>{title}</Text>
-        )}
-      />
       <View>
         <YoutubePlayer
             height={245}
@@ -57,6 +56,14 @@ export default function RecipeDetail({navigation,route}){
             fullscreen={false}
         />
       </View>
+      <SectionList
+        sections={INGREDIENTS}
+        keyExtractor={(item, index) => item + index}
+        renderItem={({ item }) => <Item title={item} />}
+        renderSectionHeader={({ section: { title } }) => (
+          <Text style={styles.title}>{title}</Text>
+        )}
+      />
       <Button title="Langkah - Langkah Yang diperlukan" onPress={() => {navigation.navigate('RecipeStep') }} />
     </View>
   );

@@ -21,7 +21,7 @@ export default function ResepNew({navigation}){
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const apiurl='https://sore.grob.media/api/v1/recipes?limit=5&page=' + page
-  const apiurl2="https://sore.grob.media/api/v1/recipes?limit=20&page=1"
+  const apiurl2="https://sore.grob.media/api/v1/recipes?limit=25&page=1"
 
   const getData = () => {
     console.log(apiurl);
@@ -65,6 +65,7 @@ export default function ResepNew({navigation}){
             />
             <View style={{flex:1, flexDirection:'column'}}>
             <Text style={styles.textStyle}>{item.title}</Text>
+            <Text style={styles.textStyle2}></Text>
             <Text style={styles.textStyle}>{item.content.substring(0, 100)}.....</Text>
             </View>
         </View>
@@ -96,7 +97,7 @@ export default function ResepNew({navigation}){
       const newData = dataSource1.filter(function (item) {
       const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
       const textData = text.toUpperCase();
-      return itemData.indexOf(textData) == 0;
+      return itemData.indexOf(textData) > -1;
       });
       setLoading(true);
       setDataSource(newData);
@@ -177,9 +178,17 @@ const styles = StyleSheet.create({
     borderRadius : 10
 },
 textStyle: {
+  marginTop:5,
   marginRight:20,
   fontSize: 15,
   textAlign: 'justify',
+},
+
+textStyle2: {
+  height: 2,
+  width: '100%',
+  backgroundColor: 'black',
+  marginTop:5,
 },
 
 FontSearch: {
